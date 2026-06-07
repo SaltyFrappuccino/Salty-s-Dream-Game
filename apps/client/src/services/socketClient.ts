@@ -1,4 +1,4 @@
-﻿import { io, type Socket } from "socket.io-client";
+import { io, type Socket } from "socket.io-client";
 
 const socketUrl = import.meta.env.VITE_SOCKET_URL || "http://localhost:3000";
 
@@ -21,9 +21,8 @@ export const socketClient: Socket = io(socketUrl, {
   autoConnect: false,
   auth: {
     userId: localStorage.getItem("sdg_demo_user") ?? "guest",
-    displayName: localStorage.getItem("sdg_demo_name") ?? "Р“РѕСЃС‚СЊ",
+    displayName: localStorage.getItem("sdg_demo_name") ?? "Гость",
     token: undefined,
     seasonLobbyId: resolveSeasonLobbyId()
   }
 });
-

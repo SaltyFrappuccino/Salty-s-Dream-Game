@@ -5,6 +5,7 @@ export type RoomState = {
   status: "Waiting" | "ReadyCheck" | "InMatch" | "Finished";
   season?: {
     id: string;
+    joinCode: string;
     name: string;
     endsAt: string;
   };

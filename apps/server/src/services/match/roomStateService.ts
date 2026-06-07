@@ -15,6 +15,7 @@ export const roomStateService = {
       season: season
         ? {
             id: season.id,
+            joinCode: season.joinCode,
             name: season.name,
             endsAt: season.endsAt
           }

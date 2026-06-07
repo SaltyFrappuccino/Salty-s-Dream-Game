@@ -1,5 +1,7 @@
-﻿import type { PlayerDeck, RoomState } from "@sdg/shared";
+import { useMemo, useState } from "react";
+import type { PlayerDeck, RoomState } from "@sdg/shared";
 import { Panel } from "../../components/ui/Panel/Panel";
+import { Button } from "../../components/ui/Button/Button";
 import { RoomReadyButton } from "./RoomReadyButton";
 import { RoomSettingsControls } from "./RoomSettingsControls";
 
@@ -11,21 +13,52 @@ type Props = {
 };
 
 export function RoomControls({ decks, room, selectedDeckId, onSelectedDeckChange }: Props) {
+  const [copyState, setCopyState] = useState<"idle" | "done">("idle");
   const playerLabel = (userId: string) => userId.split(":").at(-1) ?? userId;
+
+  const inviteLink = useMemo(() => {
+    if (!room?.season) {
+      return "";
+    }
+
+    const url = new URL("/auth", window.location.origin);
+    url.searchParams.set("season", room.season.joinCode);
+    url.searchParams.set("room", room.roomId);
+    return url.toString();
+  }, [room]);
+
+  async function copyInviteLink() {
+    if (!inviteLink) {
+      return;
+    }
+
+    await navigator.clipboard.writeText(inviteLink);
+    setCopyState("done");
+    window.setTimeout(() => setCopyState("idle"), 1800);
+  }
 
   return (
     <Panel>
-      <p>РљРѕРґ РєРѕРјРЅР°С‚С‹: {room?.roomId ?? "РѕР¶РёРґР°РЅРёРµ"}</p>
+      <p>Код комнаты: {room?.roomId ?? "ожидание"}</p>
       {room?.season && (
         <p>
-          РЎРµР·РѕРЅ: {room.season.name} РґРѕ {new Date(room.season.endsAt).toLocaleString("ru-RU")}
+          Сезон: {room.season.name} до {new Date(room.season.endsAt).toLocaleString("ru-RU")}
         </p>
       )}
+      {inviteLink && (
+        <div>
+          <div>Ссылка-приглашение для второго браузера:</div>
+          <div>{inviteLink}</div>
+          <Button onClick={() => void copyInviteLink()} variant="secondary">
+            {copyState === "done" ? "Ссылка скопирована" : "Скопировать ссылку"}
+          </Button>
+        </div>
+      )}
       <div>
-        РРіСЂРѕРєРё: {room?.players.map((player) => `${playerLabel(player.userId)}${player.ready ? " РіРѕС‚РѕРІ" : ""}`).join(" / ") ?? "РЅРµС‚ РґР°РЅРЅС‹С…"}
+        Игроки: {room?.players.map((player) => `${playerLabel(player.userId)}${player.ready ? " готов" : ""}`).join(" / ") ?? "нет данных"}
       </div>
       <label>
-        РљРѕР»РѕРґР°
+        Колода
         <select value={selectedDeckId} onChange={(event) => onSelectedDeckChange(event.target.value)}>
           {decks.map((deck) => (
             <option value={deck.id} key={deck.id}>
@@ -39,4 +72,3 @@ export function RoomControls({ decks, room, selectedDeckId, onSelectedDeckChange
     </Panel>
   );
 }
-

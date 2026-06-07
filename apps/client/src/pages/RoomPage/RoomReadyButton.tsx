@@ -1,4 +1,4 @@
-﻿import type { RoomState } from "@sdg/shared";
+import type { RoomState } from "@sdg/shared";
 import { Button } from "../../components/ui/Button/Button";
 import { socketClient } from "../../services/socketClient";
 
@@ -25,8 +25,7 @@ export function RoomReadyButton({ room, selectedDeckId }: Props) {
         });
       }}
     >
-      Р’С‹Р±СЂР°С‚СЊ СЃС‚Р°СЂС‚РѕРІСѓСЋ РєРѕР»РѕРґСѓ Рё РіРѕС‚РѕРІ
+      Выбрать стартовую колоду и готов
     </Button>
   );
 }
-

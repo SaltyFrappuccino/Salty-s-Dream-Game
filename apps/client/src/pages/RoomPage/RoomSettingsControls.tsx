@@ -1,4 +1,4 @@
-﻿import type { RoomState } from "@sdg/shared";
+import type { RoomState } from "@sdg/shared";
 import { Toggle } from "../../components/ui/Toggle/Toggle";
 import { socketClient } from "../../services/socketClient";
 
@@ -26,7 +26,7 @@ export function RoomSettingsControls({ room }: { room: RoomState | null }) {
 function TurnTimerSelect({ room }: { room: RoomState }) {
   return (
     <label>
-      РўР°Р№РјРµСЂ С…РѕРґР°
+      Таймер хода
       <select
         value={room.settings.turnTimerSeconds}
         onChange={(event) => {
@@ -37,11 +37,10 @@ function TurnTimerSelect({ room }: { room: RoomState }) {
           });
         }}
       >
-        <option value={60}>60 СЃРµРєСѓРЅРґ</option>
-        <option value={90}>90 СЃРµРєСѓРЅРґ</option>
-        <option value={120}>120 СЃРµРєСѓРЅРґ</option>
+        <option value={60}>60 секунд</option>
+        <option value={90}>90 секунд</option>
+        <option value={120}>120 секунд</option>
       </select>
     </label>
   );
 }
-

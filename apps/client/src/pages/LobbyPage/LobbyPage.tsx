@@ -48,6 +48,13 @@ export function LobbyPage() {
           </div>
         </section>
 
+        {lobby.socketError && (
+          <Panel>
+            <strong>Ошибка комнаты</strong>
+            <div>{lobby.socketError.message}</div>
+          </Panel>
+        )}
+
         <div className={sharedStyles.grid}>
           <Panel>
             <div className={sharedStyles.stack}>

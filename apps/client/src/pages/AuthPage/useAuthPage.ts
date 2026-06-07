@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuthStore } from "../../stores/authStore";
 import { usePlayerStore } from "../../stores/playerStore";
 import { useProgressStore } from "../../stores/progressStore";
 
 export function useAuthPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const login = useAuthStore((state) => state.login);
   const register = useAuthStore((state) => state.register);
   const finalize = useAuthStore((state) => state.finalize);
@@ -15,13 +16,14 @@ export function useAuthPage() {
   const [mode, setMode] = useState<"login" | "register">("login");
   const [loginValue, setLoginValue] = useState("");
   const [password, setPassword] = useState("");
-  const [lobbyCode, setLobbyCode] = useState("");
+  const [lobbyCode, setLobbyCode] = useState(searchParams.get("season") ?? "");
   const [error, setError] = useState<string | undefined>();
   const [loading, setLoading] = useState(false);
 
   async function submit() {
     const normalizedLogin = loginValue.trim();
     const normalizedLobbyCode = lobbyCode.trim().toUpperCase();
+    const pendingRoomId = searchParams.get("room")?.trim().toUpperCase();
 
     setLoading(true);
     setError(undefined);
@@ -36,7 +38,7 @@ export function useAuthPage() {
       if (normalizedLobbyCode) {
         await joinSeason(normalizedLobbyCode);
         await bootstrap(session.displayName);
-        navigate("/lobby");
+        navigate(pendingRoomId ? `/lobby?room=${pendingRoomId}` : "/lobby");
         return;
       }
 

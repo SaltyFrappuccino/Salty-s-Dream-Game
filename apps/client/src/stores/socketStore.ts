@@ -1,4 +1,4 @@
-﻿import { create } from "zustand";
+import { create } from "zustand";
 import type { ApiError, MatchState, RoomState } from "@sdg/shared";
 import { socketClient } from "../services/socketClient";
 
@@ -12,7 +12,7 @@ type SocketState = {
   connect: () => void;
 };
 
-const defaultDisplayName = "Р“РѕСЃС‚СЊ";
+const defaultDisplayName = "Гость";
 
 function resolveSeasonLobbyId() {
   const raw = localStorage.getItem("sdg_active_season");
@@ -67,4 +67,3 @@ export const useSocketStore = create<SocketState>((set) => ({
     socketClient.on("match:error", (error: ApiError) => set({ error }));
   }
 }));
-
