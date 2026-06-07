@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--color-text-0);
+}
+
+.item {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+

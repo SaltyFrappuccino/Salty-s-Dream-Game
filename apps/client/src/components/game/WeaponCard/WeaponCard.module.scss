@@ -1,0 +1,37 @@
+.root {
+  display: grid;
+  gap: 0.9rem;
+  color: inherit;
+}
+
+.art {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.meta {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.description {
+  color: var(--color-text-1);
+  line-height: 1.45;
+}
+
+.bonuses {
+  color: var(--color-text-1);
+}
+
+.status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.locked {
+  opacity: 0.62;
+}

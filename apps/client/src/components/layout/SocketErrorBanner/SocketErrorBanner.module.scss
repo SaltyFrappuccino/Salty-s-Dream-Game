@@ -1,0 +1,18 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  color: var(--color-text-0);
+  background: rgba(255, 77, 77, 0.16);
+  border-bottom: 1px solid rgba(255, 77, 77, 0.35);
+}
+
+.root button {
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+}

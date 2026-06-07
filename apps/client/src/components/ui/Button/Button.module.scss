@@ -1,0 +1,37 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(215, 55, 55, 0.95), rgba(138, 25, 25, 0.95));
+  color: var(--color-text-0);
+  font: 600 0.95rem/1 var(--font-sans);
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+  box-shadow: 0 12px 28px rgba(108, 10, 10, 0.35);
+}
+
+.root:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 34px rgba(108, 10, 10, 0.45);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 2px;
+}
+
+.variantSecondary {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
+.disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+

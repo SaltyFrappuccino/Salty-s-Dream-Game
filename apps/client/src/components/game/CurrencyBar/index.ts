@@ -1,0 +1,2 @@
+export { CurrencyBar } from "./CurrencyBar";
+

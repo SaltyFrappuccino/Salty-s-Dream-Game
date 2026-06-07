@@ -1,0 +1,35 @@
+{
+  "name": "@sdg/client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "test": "echo \"client: no tests\"",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@sdg/game-core": "workspace:*",
+    "@sdg/shared": "workspace:*",
+    "@supabase/supabase-js": "^2.56.0",
+    "clsx": "^2.1.1",
+    "phaser": "^3.90.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.2",
+    "socket.io-client": "^4.8.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.2",
+    "sass": "^1.92.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3"
+  }
+}
+
+

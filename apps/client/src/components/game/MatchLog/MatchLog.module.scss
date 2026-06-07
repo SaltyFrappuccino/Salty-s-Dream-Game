@@ -1,0 +1,11 @@
+.root {
+  display: grid;
+  gap: 0.6rem;
+  max-height: 18rem;
+  overflow: auto;
+}
+
+.entry {
+  color: var(--color-text-1);
+}
+

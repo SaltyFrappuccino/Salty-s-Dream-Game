@@ -1,0 +1,31 @@
+.root {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 10, 14, 0.82);
+  backdrop-filter: blur(16px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+}
+
+.brand {
+  font: 700 1.1rem/1 var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--color-text-1);
+}
+

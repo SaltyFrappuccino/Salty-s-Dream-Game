@@ -1,0 +1,10 @@
+.root {
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+    radial-gradient(circle at top right, rgba(215, 55, 55, 0.18), transparent 36%);
+  backdrop-filter: blur(12px);
+}
+

@@ -1,0 +1,21 @@
+.stack {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+  padding: 2rem;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(216, 167, 74, 0.2), transparent 28%),
+    linear-gradient(135deg, rgba(255, 49, 95, 0.14), rgba(255, 255, 255, 0.04));
+}
+

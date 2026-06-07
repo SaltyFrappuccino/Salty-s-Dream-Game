@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bladebound">
+  <rect width="64" height="64" rx="14" fill="#07070a"/>
+  <path d="M14 48 46 16l4 4-32 32h-4v-4Z" fill="#d8a74a"/>
+  <path d="M22 50 50 22l2 10-18 18H22Z" fill="#d73737" opacity=".85"/>
+  <path d="M17 15c11 3 20 8 32 22-14-11-24-16-36-18l4-4Z" fill="#f4f1ea" opacity=".9"/>
+</svg>

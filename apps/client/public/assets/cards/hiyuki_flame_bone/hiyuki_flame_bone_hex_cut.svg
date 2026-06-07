@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 896">
+  <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#ff315f"/><stop offset="1" stop-color="#d8a74a"/></linearGradient><filter id="noise"><feTurbulence baseFrequency=".85" numOctaves="3" seed="7"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .14"/></feComponentTransfer></filter></defs>
+  <rect width="640" height="896" rx="38" fill="#07070a"/>
+  <rect x="22" y="22" width="596" height="852" rx="32" fill="url(#g)" opacity=".88"/>
+  <rect x="22" y="22" width="596" height="852" rx="32" fill="#07070a" opacity=".34"/>
+  <path d="M76 716 C180 606 216 434 325 338 C430 246 492 156 552 76" fill="none" stroke="#d8a74a" stroke-width="18" opacity=".72"/>
+  <path d="M90 130 C210 194 398 182 540 300" fill="none" stroke="#f4f1ea" stroke-width="7" opacity=".48"/>
+  <path d="M112 748 L514 144 L552 184 L160 792 Z" fill="#f4f1ea" opacity=".86"/>
+  <path d="M146 796 L548 192 L574 288 L260 810 Z" fill="#ff315f" opacity=".82"/>
+  <circle cx="500" cy="148" r="66" fill="#d8a74a" opacity=".24"/>
+  <rect width="640" height="896" filter="url(#noise)" opacity=".7"/>
+  <text x="54" y="76" fill="#f4f1ea" font-family="Georgia,serif" font-size="30" font-weight="700">hex cut</text>
+  <text x="54" y="838" fill="#f4f1ea" font-family="Georgia,serif" font-size="42" font-weight="700">Хиюки</text>
+</svg>
